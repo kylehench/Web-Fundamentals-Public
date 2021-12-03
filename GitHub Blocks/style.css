@@ -1,0 +1,32 @@
+body {
+    background-color: gainsboro;
+}
+.text {
+    width: 800px;
+    font-family: sans-serif;
+    text-align: center;
+    color: black;
+}
+img {
+    height: 200px;
+    margin: 20px;
+}
+.container {
+    height: 240px;
+    width: 800px;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+}
+#c1 {
+    background-color: cornflowerblue;
+    justify-content: space-between;
+}
+#c2 {
+    background-color: palevioletred;
+    justify-content: space-evenly;
+}
+#c3 {
+    background-color: white;
+    justify-content: space-around;
+}
