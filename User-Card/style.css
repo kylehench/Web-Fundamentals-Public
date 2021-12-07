@@ -1,0 +1,40 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: sans-serif;
+}
+img {
+    align-self: flex-start;
+}
+.profile {
+    width: 600px;
+    height: 350px;
+    border: 3px solid lightgray;
+}
+.heading {
+    width: 606px;
+    height: 90px;
+    background-color: #17a2b8;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+.content {
+    width: 550px;
+    height: 285px;
+    position: absolute;
+    top: 45px;
+    left: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.location, .editProfile {
+    width: 200px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+h2, a {
+    margin-left: 12px;
+}
