@@ -103,12 +103,12 @@ img {
     display: flex;
     align-items: center;
 }
-.col1 span {
+.col1 .mini-header-container {
     margin-left: 33px;
     display: flex;
     align-items: center;
 }
-.col2 span {
+.col2 .mini-header-container {
     margin-left: 18px;
     display: flex;
     align-items: center;
