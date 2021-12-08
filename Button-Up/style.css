@@ -1,5 +1,6 @@
-div {
+button {
     margin: 10px 0px;
+    display: block;
 }
 #search {
     color: rgb(0, 195, 169);
