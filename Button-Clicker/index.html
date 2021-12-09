@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Clicker</title>
+    <link rel="stylesheet" href="dojo.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="nav">
+        <h1>Dojonary</h1>
+        <input type="text" id="search" placeholder="Search">
+        <button class="btn" onclick="login(this)">Login</button>
+    </div>
+    <div class="main-content">
+        <div class="col-left">
+            <div class="entry">
+                <div>
+                    <h1>ninja</h1>
+                    <p><i>noun</i></p>
+                    <p>Plural: <i>ninjas</i></p>
+                    <div class="spacer"></div>
+                    <button class="btn" onclick="alert('Ninja was liked')">13 Likes</button>
+                </div>
+                <p>A practitioner skilled in the Japanese art of <a href="#">Japanese</a> art of <a href="#">ninjutsu</a></p>
+            </div>
+            <div class="entry">
+                <div>
+                    <h1>ninja</h1>
+                    <p><i>noun</i></p>
+                    <p>Plural: <i>ninjas</i></p>
+                    <div class="spacer"></div>
+                    <button class="btn" onclick="alert('Ninja was liked')">37 Likes</button>
+                </div>
+                <p>A <a href="#">programmer</a> who breaks down problems with <a href="#">zen</a>-like focus</p>
+            </div>
+        </div>
+        <div class="col">
+            <div id="add-def-box">Dictionary is defined by <b>YOU</b>
+            <div class="spacer"></div>
+            <button class="btn" onclick="remove(this)">Add Definition</button>
+        </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
