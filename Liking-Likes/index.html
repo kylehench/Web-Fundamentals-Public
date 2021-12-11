@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liking Likes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="site-container">
+        <div class="nav-bar"><h2>Network</h2></div>
+        <h2>Your Feed</h2>
+        <div class="container">
+            <div class="col1">
+                <div id="self-card">
+                    <img src="icon/user-circle.png" alt="profile" height="100px">
+                    <a href="#">Add an avatar</a>
+                    <h2>James Doe</h3>
+                </div>
+            </div>
+            <div class="col2">
+                <div class="card" id="neil">
+                    <div class="header">
+                        <h2>Neil</h2>
+                        <div class="likes">
+                            <div class="like-count">0 like(s)</div>
+                            <button onclick="likeNeil()">Like</button>
+                        </div>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+                <div class="card" id="nichole">
+                    <div class="header">
+                        <h2>Nichole</h2>
+                        <div class="likes">
+                            <div class="like-count">0 like(s)</div>
+                            <button onclick="likeNichole()">Like</button>
+                        </div>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+                <div class="card" id="jim">
+                    <div class="header">
+                        <h2>Jim</h2>
+                        <div class="likes">
+                            <div class="like-count">0 like(s)</div>
+                            <button onclick="likeJim()">Like</button>
+                        </div>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
