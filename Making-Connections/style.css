@@ -1,0 +1,200 @@
+@font-face {
+    font-family: "Kimberley";
+    src: url(Roboto-Regular.ttf) format("truetype");
+}
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: "Kimberley", sans-serif;
+    /* border: 1px solid red; */
+}
+h2, a {
+    margin-left: 12px;
+}
+h4 {
+    font-size: large;
+}
+h5 {
+    margin-top: 5px;
+    color: rgb(98, 98, 98);
+    font-size: medium;
+}
+p {
+    margin-top: 5px;
+}
+.heading {
+    height: 70px;
+    background-color: rgb(20, 20, 20);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nav {
+    width: 750px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav-title {
+    color: white;
+    font-size: large;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#profile {
+    margin-left: 10px;
+}
+.nav-title a {
+    text-decoration: none;
+    margin-left: 25px;
+    color: white;
+}
+button {
+    margin-right: 5px;
+    background-color: #17a2b8;
+    border: 2px solid black;
+    padding: 5px 10px;
+    box-shadow: 3px 3px 2px black;
+    font-size: large;
+    color: white;
+}
+
+/* ----------------- MAIN CONTENT ----------------- */
+
+.main-content {
+    display: flex;
+    justify-content: center;
+}
+.container {
+    width: 750px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+.col {
+    display: flex;
+    flex-direction: column;
+}
+.col1 {
+    flex: 3;
+}
+.col2 {
+    flex: 2;
+}
+img {
+    align-self: flex-start;
+}
+.info-box {
+    margin: 20px 10px 0px 10px;
+    border: 3px solid gray;
+    display: flex;
+    flex-direction: column;
+}
+.mini-header {
+    width: calc(100% + 6px);
+    height: 45px;
+    background-color: rgb(49, 49, 49);
+    position: relative;
+    top: -3px;
+    left: -3px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+.col1 .mini-header-container {
+    margin-left: 33px;
+    display: flex;
+    align-items: center;
+}
+.col2 .mini-header-container {
+    margin-left: 18px;
+    display: flex;
+    align-items: center;
+}
+.profile {
+    height: 280px;
+}
+.profile .mini-header {
+    width: calc(100% + 6px);
+    height: 120px;
+    background-color: #17a2b8;
+    position: relative;
+    top: -3px;
+    left: -3px;
+}
+.user-circle {
+    position: relative;
+    top: -32px;
+    left: 30px;
+}
+.content-p {
+    height: inherit;
+    width: calc(100% - 30px);
+    position: relative;
+    left: 30px;
+    top: -25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.location, .edit-profile {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.col1 .mini-content {
+    padding: 10px 0px 10px 30px;
+}
+.col2 .mini-content {
+    padding: 10px 0px 10px 15px;
+}
+.request-count {
+    margin-right: 20px;
+    padding: 2px 2px 2px 6px;
+    color: black;
+    background-color: rgb(126, 126, 126);
+    border-radius: 50%;
+}
+.conn-req .request-count {
+    width: 13px;
+    display: flex;
+}
+.mini-content img {
+    margin-right: 10px;
+    height: 40px;
+    border-radius: 20px;
+}
+.person {
+    width: auto;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.conn-req .person:last-child {
+    margin-bottom: 0px;
+}
+.person div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+#your-conn .mini-content {
+    padding: 0px;
+    margin: 0px;
+}
+.person-container {
+    padding: 10px 0px 10px 15px;
+}
+.bar {
+    width: calc(100% + 2px);
+    height: 3px;
+    position: relative;
+    left: -1px;
+    background-color: gray;
+}
+.view-more {
+    padding: 10px 0px 10px 15px;
+}
