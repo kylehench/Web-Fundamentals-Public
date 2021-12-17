@@ -1,14 +1,14 @@
 for (var i = 1; i <= 100; i++) {
-    var stringOutput = ""
+    var stringOutput = "";
     if (i % 3 === 0) {
-        stringOutput += "Fizz"
+        stringOutput += "Fizz";
     }
     if (i % 5 === 0) {
-        stringOutput += "Buzz"
+        stringOutput += "Buzz";
     }
     if (stringOutput.length === 0) {
-        console.log(i)
+        console.log(i);
     } else {
-        console.log(stringOutput)
+        console.log(stringOutput);
     }
 }
