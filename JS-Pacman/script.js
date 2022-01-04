@@ -61,38 +61,52 @@ var arrows = {
 }
 var v;
 var currentArrow;
+var proposedV;
 var proposedArrow;
 
+function movePacman() {
+    pacman.moving = true;
+    if (world[nextPacPosition[0]][nextPacPosition[1]] == 1){
+        score += 10;
+        updateScore();
+    }
+    world[nextPacPosition[0]][nextPacPosition[1]] = 0;
+    pacman.top = 20*pacPosition[0];
+    pacman.left = 20*pacPosition[1];
+    pacman.nextTop = 20*nextPacPosition[0];
+    pacman.nextLeft = 20*nextPacPosition[1];
+    pacPosition = nextPacPosition;
+    pacman.nextTop = 20*pacPosition[0];
+    pacman.nextLeft = 20*pacPosition[1];
+    pacElement.style.transform = 'rotate('+currentArrow[2]+'deg)';
+    displayWorld();
+}
+
 function pacControl(){
-    v = currentArrow
+    if (currentArrow == undefined){
+        currentArrow = proposedArrow;
+    }
+    v = proposedArrow;
+    proposedPacPosition = [pacPosition[0]+v[0],pacPosition[1]+v[1]];
+    v = currentArrow;
     nextPacPosition = [pacPosition[0]+v[0],pacPosition[1]+v[1]];
-    if (world[nextPacPosition[0]][nextPacPosition[1]] != 2){
-        pacman.moving = true;
-        if (world[nextPacPosition[0]][nextPacPosition[1]] == 1){
-            score += 10;
-            updateScore();
-        }
-        world[nextPacPosition[0]][nextPacPosition[1]] = 0;
-        pacman.top = 20*pacPosition[0];
-        pacman.left = 20*pacPosition[1];
-        pacman.nextTop = 20*nextPacPosition[0];
-        pacman.nextLeft = 20*nextPacPosition[1];
-        pacPosition = nextPacPosition;
-        pacman.nextTop = 20*pacPosition[0]
-        pacman.nextLeft = 20*pacPosition[1]
-        pacElement.style.transform = 'rotate('+v[2]+'deg)';
-        displayWorld();
+    if (world[proposedPacPosition[0]][proposedPacPosition[1]] != 2){
+        currentArrow = proposedArrow;
+        nextPacPosition = proposedPacPosition;
+        movePacman();
+    } else if (world[nextPacPosition[0]][nextPacPosition[1]] != 2){
+        movePacman();
     } else {
         pacman.moving = false;
     }
 }
 
 document.onkeydown = function(e){
-    currentArrow = arrows[e.key]
+    proposedArrow = arrows[e.key];
 }
 
-updateInterval = 25; // time interval to update pacman animation (ms)
-pacmanSpeed = 250;    // time interval for pacman to move one unit (ms)
+updateInterval = 20; // time interval to update pacman animation (ms)
+pacmanSpeed = 240;    // time interval for pacman to move one unit (ms)
 time = 0;
 setInterval( function() {
     time += updateInterval
@@ -102,7 +116,7 @@ setInterval( function() {
         pacElement.style.top = pacman.top + dTop + "px"
         pacElement.style.left = pacman.left + dLeft + "px"
     }
-    if (time >= pacmanSpeed && currentArrow != undefined){
+    if (time >= pacmanSpeed && proposedArrow != undefined){
         time = 0;
         pacControl();
     }
