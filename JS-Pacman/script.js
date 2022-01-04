@@ -39,9 +39,18 @@ function updateScore(){
 displayWorld();
 
 pacElement = document.getElementById('pacman');
+pacPosition = [1,1]
+pacman = {
+    top: 20,
+    left: 20,
+    nextTop: 20,
+    nextLeft: 20,
+    moving: false
+}
+
+
 scoreElement = document.getElementById('score');
 scoreElement.style.left = 20*world[0].length+10 + "px"
-pacPosition = [1,1]
 score = 0;
 
 var arrows = {
@@ -50,20 +59,51 @@ var arrows = {
     ArrowDown :  [ 1, 0,  90],
     ArrowLeft :  [ 0,-1, 180]
 }
+var v;
+var currentArrow;
+var proposedArrow;
 
-document.onkeydown = function(e){
-    v = arrows[e.key]
+function pacControl(){
+    v = currentArrow
     nextPacPosition = [pacPosition[0]+v[0],pacPosition[1]+v[1]];
     if (world[nextPacPosition[0]][nextPacPosition[1]] != 2){
+        pacman.moving = true;
         if (world[nextPacPosition[0]][nextPacPosition[1]] == 1){
             score += 10;
             updateScore();
         }
         world[nextPacPosition[0]][nextPacPosition[1]] = 0;
+        pacman.top = 20*pacPosition[0];
+        pacman.left = 20*pacPosition[1];
+        pacman.nextTop = 20*nextPacPosition[0];
+        pacman.nextLeft = 20*nextPacPosition[1];
         pacPosition = nextPacPosition;
-        pacElement.style.top = 20*pacPosition[0] + "px";
-        pacElement.style.left = 20*pacPosition[1] + "px";
+        pacman.nextTop = 20*pacPosition[0]
+        pacman.nextLeft = 20*pacPosition[1]
         pacElement.style.transform = 'rotate('+v[2]+'deg)';
         displayWorld();
+    } else {
+        pacman.moving = false;
     }
 }
+
+document.onkeydown = function(e){
+    currentArrow = arrows[e.key]
+}
+
+updateInterval = 25; // time interval to update pacman animation (ms)
+pacmanSpeed = 250;    // time interval for pacman to move one unit (ms)
+time = 0;
+setInterval( function() {
+    time += updateInterval
+    if (pacman.moving == true){
+        dTop = Math.round((pacman.nextTop - pacman.top)*time/pacmanSpeed)
+        dLeft = Math.round((pacman.nextLeft - pacman.left)*time/pacmanSpeed)
+        pacElement.style.top = pacman.top + dTop + "px"
+        pacElement.style.left = pacman.left + dLeft + "px"
+    }
+    if (time >= pacmanSpeed && currentArrow != undefined){
+        time = 0;
+        pacControl();
+    }
+}, updateInterval);
