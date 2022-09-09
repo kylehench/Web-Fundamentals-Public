@@ -1,0 +1,12 @@
+{
+  "name": "11-tailwind-css",
+  "version": "1.0.0",
+  "description": "Content from \"Tailwind CSS Crash Course\" (Traversy Media)\r Link: https://www.youtube.com/watch?v=UBOj6rqRUME&ab_channel=TraversyMedia",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
