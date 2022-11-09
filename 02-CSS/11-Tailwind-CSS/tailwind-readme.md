@@ -17,11 +17,14 @@ Add appropriate paths to config. For simple project, add './*.html'.
 ```
 5. Configure Tailwind CLI build process.  
 package.json
-```"scripts": {
-    "build": "tailwindcss -i ./input.css -o ./css/main.css",
-    "watch": "tailwindcss -i ./input.css -o ./css/main.css --watch"
-  },
 ```
+"scripts": {
+  "build": "tailwindcss -i ./input.css -o ./css/main.css",
+  "watch": "tailwindcss -i ./input.css -o ./css/main.css --watch"
+},
+```
+
+
 
 # Developing with Tailwind
 Run ```npm run build``` to build or ```npm run watch``` to watch files for changes during development.
